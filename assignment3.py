@@ -34,7 +34,8 @@ def cube(n):
 
     """
     # YOUR CODE HERE
-
+def cube(n):
+    return n*n*n
 
 def is_capitalized(word):
     """Return True if word starts with capital letter else False.
@@ -47,7 +48,10 @@ def is_capitalized(word):
 
     """
     # YOUR CODE HERE
-
+    if word[0].isupper():
+        return True 
+    else:
+        return False
 
 
 def char_index_robust(char):
@@ -60,7 +64,9 @@ def char_index_robust(char):
 
     """
     # YOUR CODE HERE
-
+    ch = char.lower()
+    n = (ord(ch) - 96)
+    return (n)
 
 def tokenize(string, lowercase=False):
     """Extract words from a string containing English words.
@@ -79,7 +85,10 @@ def tokenize(string, lowercase=False):
 
     """
     # YOUR CODE HERE
-
+    import re
+    str = string.lower()
+    result = re.findall(r"[a-zA-z]+", str)
+    return(result)
 
 # normal (non-review) problems
 
@@ -102,7 +111,10 @@ def extract_mentions(tweet):
 
     """
     # YOUR CODE HERE
-
+    import re
+    for i in range (len(tweet)):
+        result = re.findall("(?<![@\w])@(\w{1,25})", tweet)
+    return result
 
 def to_pig_latin(word):
     """Transform an English-language word into Pig Latin.
